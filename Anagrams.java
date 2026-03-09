@@ -10,13 +10,7 @@ public class Anagrams {
     }
 
     public static void main(String[] args) throws IOException {
-
-        if (args.length != 2) {
-            System.out.println("Usage: ./anagrans inputfile. \n" +
-                    " You gave: \n" +
-                    " %s" + args[1]);
-            return;
-        }
+        
         String inputFile = "joyce1922_ulysses.text";
         String outputFile = "Output";
         System.out.println("Data file: " + inputFile);
@@ -53,9 +47,9 @@ public class Anagrams {
 
             String a = signature(w);
 
-            if (!A.containsKey(a)) {
+            if (!A.containsKey(a)) 
                 A.put(a, new ArrayList<String>());
-            }
+            
             A.get(a).add(w);
         }
 
@@ -97,8 +91,12 @@ public class Anagrams {
                     writer.println(anagramList);
 
                 }
+                writer.println();
+            }
+        }
                 writer.close();
-
+            
+        
                 ArrayList<String> lines = new ArrayList<>();
                 BufferedReader r2 = new BufferedReader(new FileReader("anagrams.txt"));
 
@@ -144,10 +142,10 @@ public class Anagrams {
         }
 
 
-    }
+    
 
 
-}
+
 
 
 
